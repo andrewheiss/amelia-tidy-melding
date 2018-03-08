@@ -134,9 +134,9 @@ melded_summary <- as.data.frame(cbind(t(coefs_melded$q.mi),
   mutate(term = rownames(.)) %>%
   select(term, everything()) %>%
   mutate(statistic = estimate / std.error,
-           conf.low = estimate + std.error * qt(0.025, model_degree_freedom),
-           conf.high = estimate + std.error * qt(0.975, model_degree_freedom),
-           p.value = 2 * pt(abs(statistic), model_degree_freedom, lower.tail = FALSE))
+         conf.low = estimate + std.error * qt(0.025, model_degree_freedom),
+         conf.high = estimate + std.error * qt(0.975, model_degree_freedom),
+         p.value = 2 * pt(abs(statistic), model_degree_freedom, lower.tail = FALSE))
 
 melded_summary
 ```
